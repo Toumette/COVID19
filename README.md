@@ -4,7 +4,7 @@ You can use the [editor on GitHub](https://github.com/Toumette/site/edit/master/
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-Le site est ensuite visible sous [github](https://toumette.github.io/site/)
+Le site est ensuite visible sous [github.io](https://toumette.github.io/site/)
 
 ### Markdown
 
