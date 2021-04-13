@@ -12,7 +12,78 @@ Ces 3 caractères marquent la fin du commentaire -->
 <head> <!-- Marque le début de l'en-tête de la page -->
         
 <meta charset="utf-8" />
-        <!-- Précise que, dans cette page, les caractères sont codés en utf-8 (si le serveur ne l'a pas précisé...) -->
+    <!-- Précise que, dans cette page, les caractères sont codés en utf-8 (si le serveur ne l'a pas précisé...) -->
+        
+    <!-- border: 4px blue double;  pour memoire -->
+    
+    <!-- FEUILLE DE STYLE CSS -->
+    <style>
+       h1
+        {
+            font-family: Arial;
+            font-size: 3em;
+            text-align: left;
+        }
+
+        p
+        {
+            color: black;
+            font-size: 0.8em;
+            text-align: justify;
+        }
+
+        ul
+        {
+            color: black;
+            font-size: 1em;
+        }
+
+        .signature
+        {
+            color: black;
+            font-size: 1em;
+            text-align: right;
+        }
+ 
+        .centre
+        {
+            color: black;
+            font-size: 2.5em;
+			font-weight: bold;
+            text-align: center;
+        }
+        
+        .chiffres
+        {
+            color: red;
+            font-size: 1.3em;
+			font-weight: bold;
+            text-align: left;
+        }
+        
+        .groschiffres
+        {
+            color: red;
+            font-size: 2.5em;
+			font-weight: bold;
+            text-align: left;
+        }
+        
+        .discret
+        {
+            color: black;
+            font-size: 0.8em;
+            text-align: center;
+        }
+
+        #conteneur
+        {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        }
+
+    </style>
         
 <title>COVID19</title>
         <!-- Le titre de la page est affiché dans l'onglet de la page par le navigateur.
@@ -20,11 +91,12 @@ Ces 3 caractères marquent la fin du commentaire -->
         
 </head> <!-- Marque la fin de l'en-tête de la page -->
 
+
 <body> <!-- Marque le début du corps de la page -->
 
 <!-- AFFICHAGES HTML ====================================================== -->
 
-<h3>Affichage temps réel du nombre de victimes de la COVID19 dans le monde</h3>
+<p class="centre">Victimes de la COVID19 dans le monde</p>
 
 <!-- TEST SI JAVASCRIPT EST ACTIVE ======================================== -->
     
@@ -41,31 +113,36 @@ document.write("<p>(Vous avez activé JavaScript, c'est parfait !)</p>");
 <hr>
     
 <h3>Horodatage :</h3>
-<h4 id="date_1"></h4>
+<p class="chiffres" id="date_1"></p>
+
 <h3>Heure locale :</h3>
-<h1 id="heure_1"></h1>
+<p class="groschiffres" id="heure_1"></p>
 <hr>
 
 <h3>Nombre de personnes contaminées dans le monde :</h3>
-<h1 id="contamines_1"></h1>
+<p class="groschiffres" id="contamines_1"></p>
+
 <h3>Nombre de morts dans le monde :</h3>
-<h1 id="morts_1"></h1>
+<p class="groschiffres" id="morts_1"></p>
 <hr>
 
 <h3>Informations complémentaires :</h3>
-<p>
-Les données "source" sont publiques. Elles proviennent de l'<a href="https://systems.jhu.edu/">Université Johns Hopkins</a> de Baltimore qui constitue la référence internationale depuis le début de la pandémie.
-<br/>
-Aucune information personnelle vous concernant n'est collectée (et, à fortiori, conservée), à votre insu, par ma page (contrairement à la quasi totalité des pages Web...).
-<br/>
-Le code source de cette page (côté serveur) est librement accessible depuis la page de liens de mon site Web : <a href="https://henri.nitnoc.me">https://henri.nitnoc.me</a>.
-<br/>
-JavaScript doit être activé dans votre navigateur (sans quoi je ne dispose pas de l'environnement nécessaire pour effectuer mes calculs).
-<br/>
-Le code source de cette page ainsi que les informations calculées sont fournis, sans aucune garantie, sous licence GNU General Public License v3.0 (voir le site <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository#choosing-the-right-license">GitHub</a> pour précisions).
-<br/>
-© Henri - 13/04/2021 - <a href="https://henri.nitnoc.me">https://henri.nitnoc.me</a>
-</p>
+
+<ul>
+    <li>Les données "source" sont publiques. Elles proviennent de l'<a href="https://systems.jhu.edu/">Université Johns Hopkins</a> de Baltimore qui constitue la référence internationale depuis le début de la pandémie.</li>
+
+    <li>Aucune information personnelle vous concernant n'est collectée (et, à fortiori, conservée), à votre insu, par ma page (contrairement à la quasi totalité des pages Web...).</li>
+
+    <li>Le code source de cette page (côté serveur) est librement accessible depuis la page de liens de mon site Web : <a href="https://henri.nitnoc.me">https://henri.nitnoc.me</a></li>
+    
+    <li>JavaScript doit être activé dans votre navigateur (sans quoi je ne dispose pas de l'environnement nécessaire pour effectuer mes calculs).</li>
+        
+    <li>Le code source de cette page ainsi que les informations calculées sont fournis, sans aucune garantie, sous licence GNU General Public License v3.0 (voir le site <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository#choosing-the-right-license">GitHub</a> pour précisions).</li>
+    
+</ul>
+
+<p class="signature">© Henri - 13/04/2021 - <a href="https://henri.nitnoc.me">https://henri.nitnoc.me</a></p>
+
 <hr>
     
 <!-- validateur HTM -->
@@ -172,6 +249,7 @@ function myAffich_1() {
 }
 
 var myVar_1 = setInterval(myAffich_1, mscontam);
+
 
 // CALCUL DE L'HEURE COURANTE =================================================
 
