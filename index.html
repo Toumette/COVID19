@@ -144,7 +144,7 @@ JavaScript est désactivé !!! Veuillez activer JavaScript dans votre navigateur
     
 </ul>
 
-<p class="signature">© Henri - 16/04/2021 - <a href="https://henri.nitnoc.me">https://henri.nitnoc.me</a></p>
+<p class="signature">© Henri - 20/04/2021 - <a href="https://henri.nitnoc.me">https://henri.nitnoc.me</a></p>
 
 <hr>
     
@@ -197,9 +197,11 @@ var mortsaffiche = mortsref + mortsajoutesint;
 // document.write("valeur de départ morts à afficher : " + mortsaffiche); // ctrl morts à afficher en entrée de boucle
 // document.write("<br/><br/>");
 
+
+
 function myAffich() {
   mortsaffiche++;
-  document.getElementById("morts_1").innerHTML = mortsaffiche;
+  document.getElementById("morts_1").innerHTML = Intl.NumberFormat('de-DE').format(mortsaffiche);
 }
 
 var myVar = setInterval(myAffich, msmorts);
@@ -246,9 +248,24 @@ var contaminesaffiche = contamref + contamajoutesint;  // calcul nbre de cas en 
 // document.write("valeur de départ nbre de cas à afficher : " + contaminesaffiche); // ctrl cas à afficher en entrée de boucle
 // document.write("<br/><br/>");
 
+
+
+// Mieux :
+// const formater = new Intl.NumberFormat(locale, options)
+// const texts = largeArray.map(formater.format, formater)
+
+// new Intl.NumberFormat('fr-FR').format(3141596) // => '3 141 596'
+
+// const formater = new Intl.NumberFormat('de-DE'); // instanciation
+
+// document.write("test formatage : " + formater);
+// document.write("<br/><br/>");
+
+
+
 function myAffich_1() {
   contaminesaffiche++;
-  document.getElementById("contamines_1").innerHTML = contaminesaffiche;
+  document.getElementById("contamines_1").innerHTML = Intl.NumberFormat('de-DE').format(contaminesaffiche);
 }
 
 var myVar_1 = setInterval(myAffich_1, mscontam);
